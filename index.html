@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sean Gueller N. Fernandez | Portfolio</title>
+  <meta name="description" content="Personal portfolio of Sean Gueller N. Fernandez, a second-year BSIT student at ACES Polytechnic College, Inc.">
+
+  <!-- Exactly two fonts: Rajdhani (headings, labels, buttons) and Inter (body text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!-- Logo mark (the same slanted-stripe mark as before), reused in the intro, MENU button and menu centre -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="logo-mark" viewBox="0 0 48 48">
+    <polygon points="5,39 17,9 24,9 12,39" fill="#FFFFFF"/>
+    <polygon points="17,39 29,9 36,9 24,39" fill="#5B9BF0"/>
+    <polygon points="29,39 41,9 46,9 36,39" fill="#246BCE"/>
+  </symbol>
+</svg>
+
+<!-- Cinematic background: the provided navy shark image, plus light layers and particles -->
+<div class="bg" id="bg" aria-hidden="true">
+  <div class="bg__par bg__par--far">
+    <div class="bg__img"></div>
+    <div class="bg__img bg__img--right"></div>
+  </div>
+  <div class="bg__par bg__par--near"><div class="bg__glow"></div></div>
+  <div class="bg__sweep"></div>
+  <div class="bg__veil"></div>
+</div>
+<canvas class="fx" id="fx" aria-hidden="true"></canvas>
+
+<!-- Intro: dark screen, background fades in, logo glows, then this layer removes itself (pure CSS, so it can never block the site) -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__veil"></div>
+  <div class="intro__logo">
+    <span class="intro__diamond"><svg class="logo-svg"><use href="#logo-mark"/></svg></span>
+    <span class="intro__name">Sean Fernandez</span>
+  </div>
+</div>
+
+<a class="skip-link" href="#about">Skip to content</a>
+
+<div class="page">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+
+    <div class="hero__white">
+      <span class="hero__tab">BSIT · 2nd Year</span>
+      <p class="eyebrow"><span class="stripes" aria-hidden="true"></span>Personal Portfolio</p>
+      <h1 class="hero__name">
+        <span>Sean Gueller</span>
+        <span>N. Fernandez</span>
+      </h1>
+      <p class="hero__subtitle">
+        <span>BSIT Student</span><i aria-hidden="true">|</i><span>Creative Thinker</span><i aria-hidden="true">|</i><span>Future Developer</span>
+      </p>
+    </div>
+
+    <!-- Profile photo: the ORIGINAL photograph, background untouched -->
+    <figure class="photo-card">
+      <img src="assets/profile.jpg" id="profileImg" alt="Sean Gueller N. Fernandez wearing glasses, a dark shirt and a wristwatch">
+      <figcaption>Sean Gueller N. Fernandez</figcaption>
+    </figure>
+
+    <div class="hero__blue">
+      <p class="hero__motto">Draw the dream. Tune the skill. Build the future.</p>
+      <p class="hero__intro">
+        I'm a second-year Bachelor of Science in Information Technology student at ACES Polytechnic College, Inc.
+        I love technology, creativity, and learning new skills. Right now, I'm exploring web development and building
+        my technical abilities through class activities and personal projects.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--white" href="#projects">View Projects</a>
+        <a class="btn btn--ghost" href="#contact">Get in Touch</a>
+      </div>
+      <a class="pill-next" href="#about">Next &raquo;</a>
+    </div>
+
+    <!-- Shark cutout (background removed) -->
+    <img class="shark shark--hero" src="assets/sharks/shark-02.png" alt="" aria-hidden="true">
+  </section>
+
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="sec" id="about" aria-labelledby="about-title">
+    <div class="blue-panel about">
+      <div class="about__head">
+        <p class="eyebrow eyebrow--light"><span class="stripes" aria-hidden="true"></span>Profile</p>
+        <h2 class="sec-title" id="about-title">About Me</h2>
+      </div>
+      <img class="shark shark--about" src="assets/sharks/shark-04.png" alt="" aria-hidden="true">
+
+      <dl class="info-grid">
+        <div class="info info--wide"><dt>Full Name</dt><dd>Sean Gueller N. Fernandez</dd></div>
+        <div class="info"><dt>Age</dt><dd>20</dd></div>
+        <div class="info"><dt>Hometown</dt><dd>Cogon 4, Panabo City</dd></div>
+        <div class="info info--wide"><dt>School</dt><dd>ACES Polytechnic College, Inc.</dd></div>
+        <div class="info info--wide"><dt>Course</dt><dd>Bachelor of Science in Information Technology</dd></div>
+        <div class="info"><dt>Year Level</dt><dd>2nd Year</dd></div>
+      </dl>
+    </div>
+  </section>
+
+
+  <!-- ===================== HOBBIES ===================== -->
+  <section class="sec" id="hobbies" aria-labelledby="hobbies-title">
+    <div class="white-panel">
+      <p class="eyebrow"><span class="stripes" aria-hidden="true"></span>Outside the classroom</p>
+      <h2 class="sec-title sec-title--dark" id="hobbies-title">My Interests</h2>
+
+      <ul class="interests">
+        <li class="interest">
+          <span class="interest__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4z"/><path d="M14 6l3 3"/></svg>
+          </span>
+          <h3>Drawing</h3>
+          <p>A creative outlet where I turn ideas into sketches. It trains my eye for detail and supports my graphic design.</p>
+        </li>
+        <li class="interest">
+          <span class="interest__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="9" cy="15" r="5"/><path d="M13 11l7-7M18 3l3 3"/><circle cx="9" cy="15" r="1"/></svg>
+          </span>
+          <h3>Playing Guitar</h3>
+          <p>Practicing songs helps me relax, stay patient, and keep improving one skill step by step.</p>
+        </li>
+        <li class="interest">
+          <span class="interest__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M6 13h4"/><circle cx="16" cy="12" r=".8"/><circle cx="18" cy="14" r=".8"/></svg>
+          </span>
+          <h3>Playing Games</h3>
+          <p>A fun way to unwind with friends while practicing quick thinking, strategy, and teamwork.</p>
+        </li>
+        <li class="interest">
+          <span class="interest__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="12" rx="2"/><path d="M17 10l4-2v8l-4-2z"/></svg>
+          </span>
+          <h3>Video Editing</h3>
+          <p>Cutting clips, pacing scenes, and adding effects lets me combine technology with storytelling.</p>
+        </li>
+        <li class="interest">
+          <span class="interest__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8l3 2-1 4h-4l-1-4z"/><path d="M12 3v5M15 10l5-1M14 14l3 5M10 14l-3 5M9 10L4 9"/></svg>
+          </span>
+          <h3>Playing Football</h3>
+          <p>Keeps me active and teaches discipline, coordination, and working together as a team.</p>
+        </li>
+        <li class="interest-shark" aria-hidden="true">
+          <img class="shark shark--tigers" src="assets/sharks/shark-03.png" alt="">
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ===================== GOALS ===================== -->
+  <section class="sec" id="goals" aria-labelledby="goals-title">
+    <div class="dark-panel">
+      <p class="eyebrow eyebrow--light"><span class="stripes" aria-hidden="true"></span>Where I'm headed</p>
+      <h2 class="sec-title" id="goals-title">My Personal Goals</h2>
+
+      <ol class="goals">
+        <li class="goal">
+          <span class="goal__no">01</span>
+          <div class="goal__card">
+            <h3>Travel to Other Countries</h3>
+            <p>I want to see new places, meet different people, and learn from cultures beyond my own.</p>
+          </div>
+        </li>
+        <li class="goal">
+          <span class="goal__no">02</span>
+          <div class="goal__card">
+            <h3>Become Successful</h3>
+            <p>I want to grow my skills in technology and build a career I'm proud of through steady, honest work.</p>
+          </div>
+        </li>
+        <li class="goal">
+          <span class="goal__no">03</span>
+          <div class="goal__card">
+            <h3>Create a Loving Family</h3>
+            <p>Beyond any career, I hope to build a warm home and be there for the people who matter most.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="sec" id="skills" aria-labelledby="skills-title">
+    <div class="blue-panel skills">
+      <div class="skills__shark" aria-hidden="true">
+        <img class="shark shark--skills" src="assets/sharks/shark-01.png" alt="">
+      </div>
+
+      <div class="skills__body">
+        <p class="eyebrow eyebrow--light"><span class="stripes" aria-hidden="true"></span>What I'm learning</p>
+        <h2 class="sec-title" id="skills-title">Skills and Competencies</h2>
+
+        <ul class="skill-grid">
+          <li class="skill">
+            <h3>HTML and Programming</h3>
+            <p>Learning to build and structure web pages with HTML and CSS, and starting to add JavaScript. Still growing through class activities.</p>
+          </li>
+          <li class="skill">
+            <h3>Computer Troubleshooting</h3>
+            <p>Able to handle basic problems with software and hardware, and always willing to learn the more advanced fixes.</p>
+          </li>
+          <li class="skill">
+            <h3>Graphic Design</h3>
+            <p>Drawing and design practice helps me with layouts, colors, and visuals for simple projects.</p>
+          </li>
+          <li class="skill">
+            <h3>Communication Skills</h3>
+            <p>Comfortable sharing ideas and listening to others, whether in class discussions or group work.</p>
+          </li>
+          <li class="skill skill--wide">
+            <h3>Teamwork and Leadership</h3>
+            <p>I work well with classmates and step up to guide the group when it's needed.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="sec" id="projects" aria-labelledby="projects-title">
+    <div class="white-panel">
+      <div class="projects__head">
+        <div>
+          <p class="eyebrow"><span class="stripes" aria-hidden="true"></span>Selected work</p>
+          <h2 class="sec-title sec-title--dark" id="projects-title">My Projects</h2>
+        </div>
+
+        <div class="projects__tools">
+          <label class="visually-hidden" for="projectSearch">Search projects</label>
+          <input type="search" id="projectSearch" class="field__input" placeholder="Search projects…" autocomplete="off">
+          <div class="filters" role="group" aria-label="Filter projects by category">
+            <button type="button" class="filter is-active" data-filter="all">All</button>
+            <button type="button" class="filter" data-filter="html">HTML</button>
+            <button type="button" class="filter" data-filter="design">Design</button>
+            <button type="button" class="filter" data-filter="personal">Personal</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="projects__count" id="projectCount" aria-live="polite"></p>
+
+      <div class="projects__grid" id="projectGrid">
+
+        <article class="project" data-id="html-activities" data-category="html">
+          <div class="project__thumbs project__thumbs--pair">
+            <img class="project__image" src="assets/Exercise_1.png" alt="Screenshot of HTML Exercise 1">
+            <img class="project__image" src="assets/Exercise_2.png" alt="Screenshot of HTML Exercise 2">
+          </div>
+          <p class="project__tag">HTML</p>
+          <h3>HTML Activities</h3>
+          <p class="project__desc">Class exercises that practice the basics of HTML: headings, lists, links, images, tables, and forms.</p>
+          <button type="button" class="btn btn--blue btn--small" data-details="html-activities">View Details</button>
+        </article>
+
+        <article class="project" data-id="class-schedule" data-category="html design">
+          <img class="project__image" src="assets/Class_Schedule.jpg" alt="Screenshot of the class schedule project">
+          <p class="project__tag">HTML · Design</p>
+          <h3>Class Schedule</h3>
+          <p class="project__desc">A clear weekly schedule page built with an HTML table and styled with CSS for easy reading.</p>
+          <button type="button" class="btn btn--blue btn--small" data-details="class-schedule">View Details</button>
+        </article>
+
+        <article class="project" data-id="coffee-menu" data-category="html design">
+          <img class="project__image" src="assets/Coffe_Shop_Menu.jpg" alt="Screenshot of the coffee shop menu project">
+          <p class="project__tag">HTML · Design</p>
+          <h3>Coffee Shop Menu</h3>
+          <p class="project__desc">A menu page for a coffee shop that practices layout, typography, and organizing items with prices.</p>
+          <button type="button" class="btn btn--blue btn--small" data-details="coffee-menu">View Details</button>
+        </article>
+
+        <article class="project" data-id="personal-creations" data-category="personal design">
+          <img class="project__image" src="assets/Personal_Creations.jpg" alt="Preview of personal creative work">
+          <p class="project__tag">Personal · Design</p>
+          <h3>Other Personal Creations</h3>
+          <p class="project__desc">Drawings, edits, and small experiments I make on my own time to practice and explore ideas.</p>
+          <button type="button" class="btn btn--blue btn--small" data-details="personal-creations">View Details</button>
+        </article>
+
+        <article class="project project--wide" data-id="portfolio-site" data-category="html personal design">
+          <img class="project__image" src="assets/Website.png" alt="Screenshot of the personal portfolio website">
+          <p class="project__tag">HTML · Personal · Design</p>
+          <h3>Personal Portfolio Website</h3>
+          <p class="project__desc">This website: a personal portfolio built with HTML, CSS, and JavaScript to present who I am and what I do.</p>
+          <button type="button" class="btn btn--blue btn--small" data-details="portfolio-site">View Details</button>
+        </article>
+
+      </div>
+
+      <p class="projects__empty" id="projectEmpty" hidden>No projects match your search. Try a different word or filter.</p>
+    </div>
+  </section>
+
+
+  <!-- ===================== ACHIEVEMENTS ===================== -->
+  <section class="sec" id="achievements" aria-labelledby="ach-title">
+    <div class="blue-panel achievements">
+      <p class="eyebrow eyebrow--light"><span class="stripes" aria-hidden="true"></span>Recognition</p>
+      <h2 class="sec-title" id="ach-title">Achievements and Recognition</h2>
+
+      <div class="certs">
+        <article class="cert">
+          <button type="button" class="cert__preview" data-cert="Best in Advocacy" aria-label="Preview certificate: Best in Advocacy">
+            <img class="cert__image" src="assets/Certificate_2.jpg" alt="Certificate for Best in Advocacy">
+          </button>
+          <h3>Best in Advocacy</h3>
+          <p>Click the certificate to enlarge it.</p>
+        </article>
+        <article class="cert">
+          <button type="button" class="cert__preview" data-cert="2nd Runner-Up at Fashion Show" aria-label="Preview certificate: 2nd Runner-Up at Fashion Show">
+            <img class="cert__image" src="assets/Certificate_1.jpg" alt="Certificate for 2nd Runner-Up at Fashion Show">
+          </button>
+          <h3>2nd Runner-Up at Fashion Show</h3>
+          <p>Click the certificate to enlarge it.</p>
+        </article>
+      </div>
+
+      <img class="shark shark--party" src="assets/sharks/shark-05.png" alt="" aria-hidden="true">
+    </div>
+  </section>
+
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="sec contact" id="contact" aria-labelledby="contact-title">
+    <div class="blue-panel contact__intro">
+      <p class="eyebrow eyebrow--light"><span class="stripes" aria-hidden="true"></span>Say hello</p>
+      <h2 class="sec-title sec-title--big" id="contact-title">Let's<br>Connect</h2>
+      <p class="contact__note">Have a question or want to say hello? Send me a message using the form.</p>
+    </div>
+
+    <div class="white-panel contact__form">
+      <form id="contactForm" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input class="field__input" type="text" id="name" name="name" autocomplete="name">
+            <span class="field__error" data-error-for="name"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input class="field__input" type="email" id="email" name="email" autocomplete="email">
+            <span class="field__error" data-error-for="email"></span>
+          </div>
+          <div class="field field--full">
+            <label for="subject">Subject</label>
+            <input class="field__input" type="text" id="subject" name="subject">
+            <span class="field__error" data-error-for="subject"></span>
+          </div>
+          <div class="field field--full">
+            <label for="message">Message</label>
+            <textarea class="field__input" id="message" name="message" rows="5"></textarea>
+            <span class="field__error" data-error-for="message"></span>
+          </div>
+        </div>
+        <button class="btn btn--blue" type="submit">Send Message</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__text">
+      <p class="footer__motto">Draw the dream. Tune the skill. Build the future.</p>
+      <p>© <span id="year"></span> Sean Gueller N. Fernandez · ACES Polytechnic College, Inc.</p>
+    </div>
+    <img class="shark shark--footer" src="assets/sharks/shark-02.png" alt="" aria-hidden="true">
+  </footer>
+</div>
+
+
+<!-- ===================== CONSTELLATION NAVIGATION ===================== -->
+<button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuOverlay" aria-label="Open navigation menu">
+  <span class="menu-btn__diamond"><svg class="logo-svg" aria-hidden="true"><use href="#logo-mark"/></svg></span>
+  <span class="menu-btn__label" id="menuBtnLabel">Menu</span>
+</button>
+<div class="menu-hint" id="menuHint" role="status" aria-live="polite" hidden>Explore sections</div>
+
+<div class="menu" id="menuOverlay" aria-hidden="true" inert>
+  <svg class="menu__orbits" id="menuOrbits" aria-hidden="true" focusable="false"></svg>
+
+  <nav class="constellation" id="constellation" aria-label="Main navigation">
+    <button class="core" id="menuCore" type="button" aria-label="Close navigation menu">
+      <svg class="logo-svg core__logo" aria-hidden="true"><use href="#logo-mark"/></svg>
+    </button>
+    <ul class="nodes">
+        <li class="node" style="--i:0">
+          <a class="node__link" href="#home" data-target="home"><span class="node__content"><svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span class="node__label">Home</span></span></a>
+        </li>
+        <li class="node" style="--i:1">
+          <a class="node__link" href="#about" data-target="about"><span class="node__content"><svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><span class="node__label">About</span></span></a>
+        </li>
+        <li class="node" style="--i:2">
+          <a class="node__link" href="#hobbies" data-target="hobbies"><span class="node__content"><svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 10c0 6-8 11-8 11z"/></svg><span class="node__label">Hobbies</span></span></a>
+        </li>
+        <li class="node" style="--i:3">
+          <a class="node__link" href="#skills" data-target="skills"><span class="node__content"><svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/><path d="M14 4l-4 16"/></svg><span class="node__label">Skills</span></span></a>
+        </li>
+        <li class="node" style="--i:4">
+          <a class="node__link" href="#projects" data-target="projects"><span class="node__content"><svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/><path d="M8 5v5"/></svg><span class="node__label">Projects</span></span></a>
+        </li>
+        <li class="node" style="--i:5">
+          <a class="node__link" href="#achievements" data-target="achievements"><span class="node__content"><svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M7 6H4v2a3 3 0 003 3"/><path d="M17 6h3v2a3 3 0 01-3 3"/><path d="M12 14v4"/><path d="M8 20h8"/></svg><span class="node__label">Achievements</span></span></a>
+        </li>
+        <li class="node" style="--i:6">
+          <a class="node__link" href="#contact" data-target="contact"><span class="node__content"><svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="node__label">Contact</span></span></a>
+        </li>
+    </ul>
+  </nav>
+
+  <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">Light mode</button>
+</div>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>↑</button>
+
+<!-- Project details modal -->
+<div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="Close">×</button>
+    <div class="modal__project-images" id="modalImages"></div>
+    <p class="project__tag" id="modalTag"></p>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+    <ul class="modal__list" id="modalList"></ul>
+    <button type="button" class="btn btn--blue btn--small" data-close>Close</button>
+  </div>
+</div>
+
+<!-- Certificate preview modal -->
+<div class="modal" id="certModal" role="dialog" aria-modal="true" aria-labelledby="certTitle" hidden>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="Close">×</button>
+    <h3 id="certTitle"></h3>
+    <div id="certImageWrap"><div class="ph ph--cert ph--big">Certificate placeholder</div></div>
+    <button type="button" class="btn btn--blue btn--small" data-close>Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
